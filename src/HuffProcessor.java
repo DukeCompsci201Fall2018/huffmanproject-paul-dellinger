@@ -108,8 +108,11 @@ public class HuffProcessor {
 	}
 	private HuffNode makeTreeFromCounts(int[] counts) {
 		PriorityQueue<HuffNode> pq = new PriorityQueue<>();
-		for(int dex:counts) if (counts[dex]>0) {
+		for(int dex:counts) {
+			if (counts[dex]>0) {
+		
 			pq.add(new HuffNode(dex, counts[dex], null,null));
+		}
 		}
 		while (pq.size()>1) {
 			HuffNode left = pq.remove();
